@@ -1,18 +1,47 @@
 .donation__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 25rem;
-  width: 15rem;
-  padding: 1rem 1rem 3rem;
-  background-color: whitesmoke;
-  border: 0.5px solid black;
+  height: auto;
+  width: 70vw;
+  padding: 1rem 0rem 3rem;
+  background-color: white;
+  border-radius: 0.3rem;
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.donation__heading {
+  position: relative;
+}
+
+.donation__heading:after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 0.2rem;
+  background-color: #c77b17;
+  border-radius: 3rem;
+  left: 5.8rem;
+  bottom: -1rem;
+}
+
+.donation__text {
+  color: #747474;
+  letter-spacing: 0.3px;
+  padding: 0 0.5rem;
 }
 
 .donation__button {
   border: none;
-  background-color: rgb(255, 233, 109);
-  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #c77b17;
+  padding: 1rem 1.5rem;
   cursor: pointer;
+  margin: 1.5rem 0;
+  border-radius: 0.2rem;
+}
+
+.donation__button span {
+  margin-left: 0.3rem;
 }
