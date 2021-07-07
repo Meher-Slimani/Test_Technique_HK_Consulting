@@ -1,0 +1,18 @@
+.donation__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 25rem;
+  width: 15rem;
+  padding: 1rem 1rem 3rem;
+  background-color: whitesmoke;
+  border: 0.5px solid black;
+}
+
+.donation__button {
+  border: none;
+  background-color: rgb(255, 233, 109);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
