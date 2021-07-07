@@ -1,0 +1,8 @@
+.amount__button {
+  border: none;
+  background-color: rgb(255, 233, 109);
+  height: 2.188rem;
+  width: 3.125rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}

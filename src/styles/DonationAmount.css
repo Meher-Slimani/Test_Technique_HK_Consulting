@@ -1,0 +1,28 @@
+.donation__amount__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 25rem;
+  width: 15rem;
+  padding: 3rem 1rem 3rem;
+  background-color: whitesmoke;
+  border: 0.5px solid black;
+}
+
+.donation__amount__input {
+  text-align: center;
+}
+
+.donation__amount__sums {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.donation__amount__continue {
+  border: none;
+  background-color: rgb(255, 233, 109);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
