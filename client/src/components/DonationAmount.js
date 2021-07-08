@@ -5,7 +5,7 @@ import "../styles/DonationAmount.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const DonationAmount = () => {
+const DonationAmount = ({ values, setValues }) => {
   const [input, setInput] = useState("");
   let amounts = ["10", "25", "50", "100", "250", "Personnalisé"];
   return (
@@ -17,13 +17,23 @@ const DonationAmount = () => {
           type="text"
           value={input}
           className="donation__amount__input"
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => {
+            setInput(e.target.value);
+            setValues({ ...values, amount: e.target.value });
+          }}
         />
         <div className="donation__amount__currency">&euro;</div>
       </div>
       <div className="donation__amount__sums">
         {React.Children.toArray(
-          amounts.map((am) => <Amount amount={am} setInput={setInput} />)
+          amounts.map((am) => (
+            <Amount
+              amount={am}
+              setInput={setInput}
+              values={values}
+              setValues={setValues}
+            />
+          ))
         )}
       </div>
       <Link to="/confirm">

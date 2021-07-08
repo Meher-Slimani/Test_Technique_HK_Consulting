@@ -26,7 +26,8 @@
 
 .confirm__donation__form {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .confirm__donation__form__name {
@@ -80,4 +81,37 @@
   height: 1.875rem;
   border-radius: 0.2rem;
   border: 1px solid gray;
+}
+
+.confirm__donation__form__anonym {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.8rem 0;
+}
+
+.confirm__donation__button {
+  border: none;
+  color: white;
+  background-color: #c77b17;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  margin: 1.5rem 0;
+  border-radius: 0.2rem;
+  align-self: center;
+}
+
+#comment {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .confirm__donation__form {
+    flex-direction: column;
+    width: 90%;
+  }
+  .confirm__donation__form__info {
+    margin-bottom: 0.8rem;
+  }
 }
