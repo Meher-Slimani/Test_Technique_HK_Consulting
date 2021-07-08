@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/ConfirmDonation.css";
+import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import Payment from "./Payment";
+import { CSVLink } from "react-csv";
 
 const ConfirmDonation = ({ handleChange, values }) => {
-  const { firstName, lastName, email, comment } = values;
+  const { firstName, lastName, email, comment, amount } = values;
+
+  const headers = [
+    { label: "First Name", key: "firstName" },
+    { label: "Last Name", key: "lastName" },
+    { label: "Email", key: "email" },
+    { label: "Comment", key: "comment" },
+    { label: "Amount", key: "amount" },
+  ];
+
+  const csvReport = {
+    filename: "Report.csv",
+    headers: headers,
+    data: [values],
+  };
 
   return (
     <div className="confirm__donation__container">
@@ -65,7 +81,23 @@ const ConfirmDonation = ({ handleChange, values }) => {
           <Payment type="paypal" />
         </div>
       </div>
-      <button className="confirm__donation__button">Faire le Don!</button>
+      <button
+        className="confirm__donation__button"
+        onClick={() => {
+          axios.post("/donation", values, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+        }}
+      >
+        <CSVLink
+          {...csvReport}
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          Faire le Don!
+        </CSVLink>
+      </button>
       <Footer />
     </div>
   );

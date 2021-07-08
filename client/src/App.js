@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import ConfirmDonation from "./components/ConfirmDonation";
@@ -33,7 +33,11 @@ function App() {
             exact
             path="/confirm"
             render={() => (
-              <ConfirmDonation handleChange={handleChange} values={values} />
+              <ConfirmDonation
+                handleChange={handleChange}
+                values={values}
+                setValues={setValues}
+              />
             )}
           />
         </Switch>
